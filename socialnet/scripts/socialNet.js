@@ -6,14 +6,21 @@ var socialNet = angular.module('socialNet', ['ngResource', 'ngRoute'])
 
         $routeProvider
             .when('/', {
-                template : '<div>home</div>'
+                templateUrl : './templates/pages/guestHome.html'
             })
             .when('/login', {
-                template : '<div>login</div>'
+                templateUrl : './templates/pages/login.html'
             })
             .when('/register', {
-                template : 'register'
-            });
+                templateUrl : './templates/pages/register.html'
+            })
+            .when('/PageNotFound', {
+                template: '<h1 class="text-center">Page Not Found/404</h1>'
+            })
+            .when('/users/:username', {
+                templateUrl: './templates/pages/wall.html'
+            })
+            .otherwise({redirectTo:'/PageNotFound'});
 
         // use the HTML5 History API
         $locationProvider.html5Mode(false)

@@ -1,0 +1,21 @@
+body {
+    background-image: url("../img/bg.jpg");
+}
+
+#login-register-box {
+    width: 26%;
+    margin: 50px auto;
+}
+
+#login-register-box span {
+    margin: 0 20px 0 20px;
+}
+
+.jumbotron {
+    background-color: #fdfff2;
+}
+
+#logo-container {
+    margin-top: -50px;
+    position: absolute;
+}
