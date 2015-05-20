@@ -1,66 +1,71 @@
-<h2 class="text-center">Register</h2>
-<div class="jumbotron">
-    <form class="form-horizontal">
-        <fieldset>
-            <div class="form-group">
-                <label for="inputUsername" class="col-lg-2 control-label">Username</label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputUsername" placeholder="Username">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                <div class="col-lg-10">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputRepeatPassword" class="col-lg-2 control-label">Repeat Password</label>
-                <div class="col-lg-10">
-                    <input type="password" class="form-control" id="inputRepeatPassword" placeholder="Password">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputFullName" class="col-lg-2 control-label">Full Name</label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputFullName" placeholder="Full name">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="Email">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-2 control-label">Gender</label>
-                <div class="col-lg-10">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                            Male
-                        </label>
+<div class="container">
+    <div class="jumbotron">
+        <logo></logo>
+        <h2 class="text-center">Register</h2>
+        <div class="jumbotron">
+            <form class="form-horizontal" ng-controller="registerController" name="registerForm" ng-submit="register(registration.user, registerForm)">
+                <fieldset>
+                    <div class="form-group">
+                        <label for="inputUsername" class="col-lg-2 control-label">Username</label>
+                        <div class="col-lg-10">
+                            <input type="text" name="username" class="form-control form-validation" id="inputUsername" placeholder="Username" required ng-model="registration.user.username" ng-minlength="4" ng-maxlength="15">
+                        </div>
                     </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                            Female
-                        </label>
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                        <div class="col-lg-10">
+                            <input type="password" class="form-control form-validation" id="inputPassword" placeholder="Password" required ng-model="registration.user.password" ng-minlength="6">
+                        </div>
                     </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-                            Other
-                        </label>
+                    <div class="form-group">
+                        <label for="inputRepeatPassword" class="col-lg-2 control-label">Repeat Password</label>
+                        <div class="col-lg-10">
+                            <input type="password" id="inputRepeatPassword" class="form-control form-validation" name="confirmPassword" ng-model="registration.user.confirmPassword" required compare-to="registration.user.password" />
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                    <button type="submit" class="btn btn-primary">Register</button>
-                    <a href="#!/login" class="btn btn-link pull-right">login</a>
-                </div>
-            </div>
-        </fieldset>
-    </form>
+                    <div class="form-group">
+                        <label for="inputFullName" class="col-lg-2 control-label">Full Name</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control form-validation" id="inputFullName" placeholder="Full name" required ng-model="registration.user.fullName" ng-minlength="6">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                        <div class="col-lg-10">
+                            <input type="email" class="form-control form-validation" id="inputEmail" placeholder="Email" required ng-model="registration.user.Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Gender</label>
+                        <div class="col-lg-10">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="male" checked="" required ng-model="registration.user.gender">
+                                    Male
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="female" required ng-model="registration.user.gender">
+                                    Female
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="other" required ng-model="registration.user.gender">
+                                    Other
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                            <a href="#!/login" class="btn btn-link pull-right">login</a>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
 </div>

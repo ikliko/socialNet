@@ -9,19 +9,20 @@
     <link rel="icon" href="img/logo.png"/>
 </head>
 <body ng-app="socialNet">
-<div class="container" ng-cloak>
-    <div class="jumbotron">
-        <logo></logo>
-        <div ng-view></div>
-    </div>
-</div>
+<div ng-view ng-cloak></div>
 <script src="libs/jquery.js"></script>
 <script src="libs/angular.js"></script>
 <script src="libs/angular-resource.js"></script>
 <script src="libs/angular-route.js"></script>
 <script src="libs/bootstrap.js"></script>
 <script src="scripts/socialNet.js"></script>
-<script src="scripts/controllers/userController.js"></script>
+<script src="scripts/controllers/userPageController.js"></script>
+<script src="scripts/controllers/registerController.js"></script>
 <script src="scripts/directives/logo.js"></script>
+<script src="scripts/directives/postOptions.js"></script>
+<script src="scripts/directives/userMenu.js"></script>
+<script src="scripts/directives/wallUserMenu.js"></script>
+<script src="scripts/directives/comparePasswords.js"></script>
+<script src="scripts/services/requester.js"></script>
 </body>
 </html>

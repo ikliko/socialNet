@@ -19,3 +19,87 @@ body {
     margin-top: -50px;
     position: absolute;
 }
+
+.clear {
+    clear: both;
+}
+
+.link-pic-sm {
+    height: 21px;
+}
+
+.img {
+    width: 100%;
+}
+
+#customize-top-nav {
+    margin-top: 9px;
+}
+
+.fix-top-elm {
+    margin-top: 42px;
+}
+
+.profile-img {
+    position: absolute;
+    width: 200px;
+    margin: -220px 0 0 17px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #cccccc;
+}
+
+.profile-img>img {
+    width: 100%;
+}
+
+.wall-user-menu {
+    margin-top: -38px;
+}
+
+.navbar-custom-settings {
+    margin: -10px 0 -10px 220px;
+}
+
+.customize-name-link {
+    position: absolute;
+    font-size: 26px;
+    margin: -91px 0 0 220px;
+}
+
+.left-part {
+    display: inline-block;
+    width: 49%;
+}
+
+.right-part {
+    display: inline-block;
+    width: 49%;
+    margin-left: 1.69%;
+}
+
+.post-area {
+    margin: 0px -4.84375px 0px 0px;
+    height: 86px;
+    width: 100%;
+    resize: none;
+}
+
+.friend-img {
+    width: 200px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #cccccc;
+}
+
+.comment-post {
+    margin: -21px 0 0 17px;
+}
+
+input.ng-invalid.ng-dirty.form-validation {
+    border: 3px solid #ff0000;
+}
+
+input.ng-valid.ng-dirty.form-validation {
+    border: 3px solid #00ff00;
+}

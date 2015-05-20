@@ -17,6 +17,9 @@ var socialNet = angular.module('socialNet', ['ngResource', 'ngRoute'])
             .when('/PageNotFound', {
                 template: '<h1 class="text-center">Page Not Found/404</h1>'
             })
+            .when('/AccesDenied', {
+                template: '<h1 class="text-center">Access Denied! <a href="#!/login" class="btn btn-lg btn-primary">Log in</a> first.</h1>'
+            })
             .when('/users/:username', {
                 templateUrl: './templates/pages/wall.html'
             })
