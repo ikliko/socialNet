@@ -1,13 +1,26 @@
 /**
  * Created by kliko on 19.05.15.
  */
-socialNet.controller('registerController', function ($scope) {
+socialNet.controller('registerController', function ($scope, service) {
+    $scope.invalidMsg = false;
     $scope.register = function (user, registerForm) {
         console.log(registerForm);
-        if(registerForm.$valid) {
-            console.log(user);
+        if(registerForm.$valid && (user.password == user.confirmPassword)) {
+            var registerData = {
+                username: user.username,
+                password: user.password,
+                confirmPassword: user.confirmPassword,
+                name: user.fullName,
+                email: user.email
+            };
+            service.register(registerData)
+                .then(function (data) {
+                    console.log(data);
+                }, function (error) {
+                    console.log(error);
+                });
         } else {
-
+            $scope.invalidMsg = true;
         }
     }
 });

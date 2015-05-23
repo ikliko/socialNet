@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" ng-controller="userPageController">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#!/">SocialNet</a>
@@ -12,27 +12,43 @@
                 <button type="submit" class="btn btn-default btn-sm">search</button>
             </form>
             <ul id="customize-top-nav" class="nav nav-pills navbar-right nav-pills-centralize">
-                <li>
-                    <a href="#!/feed">Home <span class="badge">69</span></a>
-                </li>
-                <li class="active">
+                <li class="{{wallActive}}">
                     <a href="#!/users/kliko">
                         <img class="link-pic-sm" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfa1/v/t1.0-1/c0.0.32.32/p32x32/10001372_1381684452110308_827010543_n.jpg?oh=05959e674eb8a58cf67c42ae08c71b8a&oe=56020FCD&__gda__=1443270468_4f43e269529c22c7e0f98ab3c4f5670f" alt="profile"/>
                         <span>{{username}}</span>
                         <span class="badge"></span>
                     </a>
                 </li>
-                <li>
-                    <a href="#!/requests">Requests <span class="badge">69</span></a>
+                <li class="{{feedActive}}">
+                    <a href="#!/feed">Home <span class="badge">69</span></a>
+                </li>
+                <li class="{{friendsRequestActive}}">
+                    <a href="#!/friends-requests">
+                        <!--requests-->
+                        <i class="fa fa-users font-lg"></i>
+                        <span class="badge">69</span>
+                    </a>
+                </li>
+                <li class="{{editProfileActive}}">
+                    <a href="#!/edit/profile">
+                        <!--edit profile-->
+                        <i class="fa fa-cogs font-lg"></i>
+                        <span class="badge"></span>
+                    </a>
+                </li>
+                <li class="{{isEditPasswordActive}}">
+                    <a href="#!/edit/password">
+                        <!--change pass-->
+                        <i class="fa fa-key font-lg"></i>
+                        <span class="badge"></span>
+                    </a>
                 </li>
                 <li>
-                    <a href="#!/edit/profile">Edit Profile <span class="badge"></span></a>
-                </li>
-                <li>
-                    <a href="#!/edit/password">Change Password <span class="badge"></span></a>
-                </li>
-                <li>
-                    <a href="#!/logout">Logout <span class="badge"></span></a>
+                    <a href="#!/logout">
+                        <!--Logout-->
+                        <i class="fa fa-sign-out font-lg"></i>
+                        <span class="badge"></span>
+                    </a>
                 </li>
             </ul>
         </div>

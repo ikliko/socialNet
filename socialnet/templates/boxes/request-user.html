@@ -1,0 +1,18 @@
+<div>
+    <div class="col-md-4 right-divider" >
+        <div class="col-md-2">
+            <img class="img friend-request-img" src="{{row.leftCol.image}}"
+                 alt=""/>
+        </div>
+        <div class="col-md-5">{{row.leftCol.fullName}}</div>
+        <button class="btn btn-primary btn-sm">Accept Request</button>
+    </div>
+    <div class="col-md-4" ng-show="row.rightCol">
+        <div class="col-md-2">
+            <img class="img friend-request-img" src="{{row.rightCol.image}}"
+                 alt=""/>
+        </div>
+        <div class="col-md-5">{{row.rightCol.fullName}}</div>
+        <button class="btn btn-primary btn-sm">Accept Request</button>
+    </div>
+</div>

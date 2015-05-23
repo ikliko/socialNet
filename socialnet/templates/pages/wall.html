@@ -1,19 +1,6 @@
-<user-menu></user-menu>
+<user-menu ng-controller="wallPageController"></user-menu>
 <div class="container fix-top-elm">
-    <div ng-controller="userPageController">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <img class="img-thumbnail img" src="https://scontent-fra.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/1506846_1382700598675360_349073648_n.jpg?oh=6f8b667e9d19d2a5070c494fc4b67ea5&oe=5606692E"
-                     alt="cover photo keep calm and learn to code"/>
-            </div>
-        </div>
-    </div>
-    <div class="profile-img">
-        <img src="https://scontent-fra.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/10001372_1381684452110308_827010543_n.jpg?oh=55ac7cf70148bcf314ec60c246822e61&oe=55C495F0"
-             alt="profile picture"/>
-    </div>
-    <a href="#" target="_self" class="btn btn-link customize-name-link">{{fullName}}</a>
-    <wall-user-menu></wall-user-menu>
+    <user-profile></user-profile>
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
@@ -63,19 +50,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">Make a post</div>
-                <form action="post">
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <textarea class="form-control post-area" rows="3"></textarea>
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        <a href="#" class="btn btn-primary btn-block">Post</a>
-                    </div>
-                </form>
-            </div>
+            <post></post>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="row">

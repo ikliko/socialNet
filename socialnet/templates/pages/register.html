@@ -2,8 +2,21 @@
     <div class="jumbotron">
         <logo></logo>
         <h2 class="text-center">Register</h2>
-        <div class="jumbotron">
-            <form class="form-horizontal" ng-controller="registerController" name="registerForm" ng-submit="register(registration.user, registerForm)">
+        <div class="jumbotron" ng-controller="registerController">
+            <div ng-show="invalidMsg" class="row text-center">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="alert  alert-dismissible alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        Enter valid data and try submitting again.
+                    </div>
+                    <div class="alert alert-dismissible alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        Enter valid data and try submitting again.
+                    </div>
+                </div>
+            </div>
+            <form class="form-horizontal"  name="registerForm" ng-submit="register(registration.user, registerForm)">
                 <fieldset>
                     <div class="form-group">
                         <label for="inputUsername" class="col-lg-2 control-label">Username</label>
@@ -20,7 +33,7 @@
                     <div class="form-group">
                         <label for="inputRepeatPassword" class="col-lg-2 control-label">Repeat Password</label>
                         <div class="col-lg-10">
-                            <input type="password" id="inputRepeatPassword" class="form-control form-validation" name="confirmPassword" ng-model="registration.user.confirmPassword" required compare-to="registration.user.password" />
+                            <input type="password" id="inputRepeatPassword" class="form-control form-validation" placeholder="Confirm Password" name="confirmPassword" ng-model="registration.user.confirmPassword" required compare-to="registration.user.password" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -32,7 +45,7 @@
                     <div class="form-group">
                         <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                         <div class="col-lg-10">
-                            <input type="email" class="form-control form-validation" id="inputEmail" placeholder="Email" required ng-model="registration.user.Email">
+                            <input type="email" class="form-control form-validation" id="inputEmail" placeholder="Email" required ng-model="registration.user.email">
                         </div>
                     </div>
                     <div class="form-group">
@@ -40,19 +53,19 @@
                         <div class="col-lg-10">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="male" checked="" required ng-model="registration.user.gender">
+                                    <input type="radio" name="optionsRadios" value="male" checked="" required ng-model="registration.user.gender">
                                     Male
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="female" required ng-model="registration.user.gender">
+                                    <input type="radio" name="optionsRadios" value="female" required ng-model="registration.user.gender">
                                     Female
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="other" required ng-model="registration.user.gender">
+                                    <input type="radio" name="optionsRadios" value="other" required ng-model="registration.user.gender">
                                     Other
                                 </label>
                             </div>

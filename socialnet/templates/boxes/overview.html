@@ -1,0 +1,48 @@
+<div>
+    <div class="panel panel-default edit-info">
+        <div class="panel-body">
+            <div class="inline" ng-show="workInfo">Works in {{work}}</div>
+            <div class="inline" ng-hide="workInfo">
+                <form name="editWork" ng-submit="edit('work', newWorkName)">
+                    <input type="text" name="workName" id="workName" value="{{work}}" ng-model="newWorkName"/>
+                    <button class="btn btn-default btn-sm hidden"></button>
+                </form>
+            </div>
+            <span class="pull-right"><button class="btn btn-default btn-sm fa fa-pencil" ng-click="showEdit('work')"></button></span>
+        </div>
+    </div>
+    <div class="panel panel-default edit-info">
+        <div class="panel-body">
+            <div class="inline" ng-show="studyInfo">Studied in {{study}}</div>
+            <div class="inline" ng-hide="studyInfo">
+                <form name="editWork" ng-submit="edit('study', newStudyName)">
+                    <input type="text" name="studyName" id="studyName" value="{{work}}" ng-model="newStudyName"/>
+                    <button class="btn btn-default btn-sm hidden"></button>
+                </form>
+            </div>
+            <span class="pull-right"><button class="btn btn-default btn-sm fa fa-pencil" ng-click="showEdit('study')"></button></span>
+        </div>
+    </div>
+    <div class="panel panel-default edit-info">
+        <div class="panel-body">
+            Residence - Sofia <span class="pull-right"><button class="btn btn-default btn-sm fa fa-pencil"></button></span>
+        </div>
+    </div>
+    <div class="panel panel-default edit-info">
+        <div class="panel-body">
+            <div class="inline" ng-show="fullNameInfo">Full name {{fullName}}</div>
+            <div class="inline" ng-hide="fullNameInfo">
+                <form name="editWork" ng-submit="edit('fullName', newFullName)">
+                    <input type="text" name="fullName" id="fullName" value="{{work}}" ng-model="newFullName"/>
+                    <button class="btn btn-default btn-sm hidden"></button>
+                </form>
+            </div>
+            <span class="pull-right"><button class="btn btn-default btn-sm fa fa-pencil" ng-click="showEdit('fullName')"></button></span>
+        </div>
+    </div>
+    <div class="panel panel-default edit-info">
+        <div class="panel-body">
+            From Silistra <span class="pull-right"><button class="btn btn-default btn-sm fa fa-pencil"></button></span>
+        </div>
+    </div>
+</div>

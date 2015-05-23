@@ -2,11 +2,13 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Social Net</title>
     <base href="/softuni/angular/socialnet/">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="css/social-net.css"/>
     <link rel="icon" href="img/logo.png"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/social-net.css"/>
 </head>
 <body ng-app="socialNet">
 <div ng-view ng-cloak></div>
@@ -16,13 +18,22 @@
 <script src="libs/angular-route.js"></script>
 <script src="libs/bootstrap.js"></script>
 <script src="scripts/socialNet.js"></script>
-<script src="scripts/controllers/userPageController.js"></script>
+<script src="scripts/controllers/wallPageController.js"></script>
+<script src="scripts/controllers/feedPageController.js"></script>
 <script src="scripts/controllers/registerController.js"></script>
+<script src="scripts/controllers/editProfileController.js"></script>
+<script src="scripts/controllers/editPasswordController.js"></script>
+<script src="scripts/controllers/friendsRequestsController.js"></script>
 <script src="scripts/directives/logo.js"></script>
 <script src="scripts/directives/postOptions.js"></script>
 <script src="scripts/directives/userMenu.js"></script>
+<script src="scripts/directives/post.js"></script>
 <script src="scripts/directives/wallUserMenu.js"></script>
 <script src="scripts/directives/comparePasswords.js"></script>
+<script src="scripts/directives/userProfile.js"></script>
+<script src="scripts/directives/overview.js"></script>
+<script src="scripts/directives/requestUser.js"></script>
+<script src="scripts/directives/changePicture.js"></script>
 <script src="scripts/services/requester.js"></script>
 </body>
 </html>
