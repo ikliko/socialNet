@@ -1,17 +1,17 @@
-<user-menu ng-controller="feedPageController"></user-menu>
-<div class="container fix-top-elm" ng-controller="feedPageController">
+<user-menu></user-menu>
+<div class="container fix-top-elm">
     <div class="fix-top-elm">
         <div class="row">
             <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <a href="#!/users/kliko" class="img-thumbnail">
-                            <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfa1/v/t1.0-1/c0.0.50.50/p50x50/10001372_1381684452110308_827010543_n.jpg?oh=2a5d5e87a1ecdda4214d743a03d21025&oe=55C88272&__gda__=1439597307_3ea190887d1e348cf448ec05ec4ff1b6"
+                            <img src="{{image}}"
                                  alt="profile picture"/>
                         </a>
                         <div class="btn-group-vertical">
                             <a href="#!/users/kliko" class="btn btn-link">
-                                kliko atanasov
+                                {{fullName}}
                             </a>
                             <a href="#!/edit/profile" class="btn btn-link">
                                 Edit profile
@@ -21,8 +21,8 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <post></post>
-                <div class="panel panel-default">
+                <!--<post></post>-->
+                <div class="panel panel-default" ng-repeat="post in posts">
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-2">
@@ -31,109 +31,15 @@
                             </div>
                             <div class="col-lg-10">
                                 <div class="row">
-                                    <a href="profile" class="btn btn-link">Kliko Atanasov</a> posted:
+                                    <a href="profile" class="btn btn-link">{{post.author.name}}</a> posted:
                                 </div>
                                 <div class="row">
                                     <div class="col-md-2">
-                                        05.06.2015
+                                        {{post.date | date:'MM/dd/yyyy "at" h:mma'}}
                                     </div>
                                 </div>
                                 <div class="row">
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        <post-options></post-options>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <img class="img" src="https://scontent-fra.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/10001372_1381684452110308_827010543_n.jpg?oh=55ac7cf70148bcf314ec60c246822e61&oe=55C495F0"
-                                     alt="profile picture"/>
-                            </div>
-                            <div class="col-lg-10">
-                                <div class="row">
-                                    <a href="profile" class="btn btn-link">Kliko Atanasov</a> posted:
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        05.06.2015
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        <post-options></post-options>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <img class="img" src="https://scontent-fra.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/10001372_1381684452110308_827010543_n.jpg?oh=55ac7cf70148bcf314ec60c246822e61&oe=55C495F0"
-                                     alt="profile picture"/>
-                            </div>
-                            <div class="col-lg-10">
-                                <div class="row">
-                                    <a href="profile" class="btn btn-link">Kliko Atanasov</a> posted:
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        05.06.2015
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        <post-options></post-options>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <img class="img" src="https://scontent-fra.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/10001372_1381684452110308_827010543_n.jpg?oh=55ac7cf70148bcf314ec60c246822e61&oe=55C495F0"
-                                     alt="profile picture"/>
-                            </div>
-                            <div class="col-lg-10">
-                                <div class="row">
-                                    <a href="profile" class="btn btn-link">Kliko Atanasov</a> posted:
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        05.06.2015
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
-                                    Ebasi qkoto post hahaha
+                                    {{post.postContent}}
                                 </div>
                             </div>
                         </div>

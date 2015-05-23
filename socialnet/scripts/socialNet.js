@@ -9,13 +9,16 @@ var socialNet = angular.module('socialNet', ['ngResource', 'ngRoute' ])
                 templateUrl : './templates/pages/guestHome.html'
             })
             .when('/login', {
-                templateUrl : './templates/pages/login.html'
+                templateUrl : './templates/pages/login.html',
+                controller: 'loginController'
             })
             .when('/register', {
-                templateUrl : './templates/pages/register.html'
+                templateUrl : './templates/pages/register.html',
+                controller: 'registerController'
             })
             .when('/feed', {
-                templateUrl: './templates/pages/feed.html'
+                templateUrl: './templates/pages/feed.html',
+                controller: 'feedPageController'
             })
             .when('/users/:username', {
                 templateUrl: './templates/pages/wall.html',

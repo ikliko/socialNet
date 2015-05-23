@@ -6,19 +6,21 @@
                      alt=""/>
             </div>
             <div class="panel-footer">
-                <div class="form-group">
-                    <label for="inputProfilePic" class="col-lg-3 control-label">Profile Picture</label>
-                    <div class="col-lg-6">
-                        <input type="file" class="form-control" id="inputProfilePic" value="browse">
+                <form ng-submit="changeProfile(myFile)" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="inputProfilePic" class="col-lg-3 control-label">Profile Picture</label>
+                        <div class="col-lg-6">
+                            <input type="file" file-upload-model="myFile" class="form-control" id="inputProfilePic" value="browse"/>
+                        </div>
+                        <button class="control-label btn btn-primary btn-sm fa fa-upload" ng-click="changeProfile(myFile)"></button>
+                        <a href="#!/edit/profile" class="btn btn-link btn-sm">cancel</a>
                     </div>
-                    <button class="control-label btn btn-primary btn-sm fa fa-upload"></button>
-                    <a href="#!/edit/profile" class="btn btn-link btn-sm">cancel</a>
-                </div>
+                </form>
             </div>
         </div>
         <div class="panel panel-default">
             <div class="panel-body">
-                <img class="img" src="https://scontent-fra.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/1506846_1382700598675360_349073648_n.jpg?oh=6f8b667e9d19d2a5070c494fc4b67ea5&oe=5606692E"
+                <img class="img img" src="https://scontent-fra.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/1506846_1382700598675360_349073648_n.jpg?oh=6f8b667e9d19d2a5070c494fc4b67ea5&oe=5606692E"
                      alt=""/>
             </div>
             <div class="panel-footer">

@@ -1,10 +1,8 @@
 /**
  * Created by kliko on 19.05.15.
  */
-socialNet.controller('registerController', function ($scope, service) {
-    $scope.invalidMsg = false;
+socialNet.controller('registerController', function ($scope, service, notifyService) {
     $scope.register = function (user, registerForm) {
-        console.log(registerForm);
         if(registerForm.$valid && (user.password == user.confirmPassword)) {
             var registerData = {
                 username: user.username,
@@ -15,12 +13,10 @@ socialNet.controller('registerController', function ($scope, service) {
             };
             service.register(registerData)
                 .then(function (data) {
-                    console.log(data);
+                    notifyService.showInfo('Registration Successful!');
                 }, function (error) {
-                    console.log(error);
+                    notifyService.showError('Unsuccessful Registration!', error);
                 });
-        } else {
-            $scope.invalidMsg = true;
         }
     }
 });

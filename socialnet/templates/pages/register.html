@@ -3,19 +3,6 @@
         <logo></logo>
         <h2 class="text-center">Register</h2>
         <div class="jumbotron" ng-controller="registerController">
-            <div ng-show="invalidMsg" class="row text-center">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <div class="alert  alert-dismissible alert-danger">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        Enter valid data and try submitting again.
-                    </div>
-                    <div class="alert alert-dismissible alert-danger">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        Enter valid data and try submitting again.
-                    </div>
-                </div>
-            </div>
             <form class="form-horizontal"  name="registerForm" ng-submit="register(registration.user, registerForm)">
                 <fieldset>
                     <div class="form-group">
@@ -53,19 +40,19 @@
                         <div class="col-lg-10">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" value="male" checked="" required ng-model="registration.user.gender">
+                                    <input type="radio" name="optionsRadios" value="1" checked="" required ng-model="registration.user.gender">
                                     Male
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" value="female" required ng-model="registration.user.gender">
+                                    <input type="radio" name="optionsRadios" value="2" required ng-model="registration.user.gender">
                                     Female
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" value="other" required ng-model="registration.user.gender">
+                                    <input type="radio" name="optionsRadios" value="3" required ng-model="registration.user.gender">
                                     Other
                                 </label>
                             </div>

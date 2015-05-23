@@ -1,16 +1,16 @@
 /**
  * Created by kliko on 21.05.15.
  */
-socialNet.controller('friendsRequestsController', function ($scope, $routeParams, $location) {
-    if(sessionStorage['sessionToken']) {
+socialNet.controller('friendsRequestsController', function ($scope, $routeParams, $location, service) {
+    if(!service.isLoggedIn()) {
         $location.path('/AccesDenied')
     }
     $scope.friendsRequestActive = 'active';
 
-    $scope.username = $routeParams.username || 'kliko';
-    $scope.fullName = 'Kliko Atanasov';
-    $scope.work = 'One Creative as Backend';
-    $scope.study = 'Software University';
+    //$scope.username = $routeParams.username || 'kliko';
+    //$scope.fullName = 'Kliko Atanasov';
+    //$scope.work = 'One Creative as Backend';
+    //$scope.study = 'Software University';
 
     var allRequests = [
         {
