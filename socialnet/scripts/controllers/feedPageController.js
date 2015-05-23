@@ -7,8 +7,24 @@ socialNet.controller('feedPageController', function ($scope, $location, service)
         $location.path('/AccesDenied')
     }
 
-    //$scope.username = $routeParams.username || 'kliko';
-    //$scope.fullName = 'Kliko Atanasov';
-    //$scope.work = 'One Creative as Backend';
-    //$scope.study = 'Software University';
+    var isFullData = localStorage.fullName;
+    if(!isFullData) {
+        console.log('no full name');
+        service.getFullUserData(service.getUsername())
+            .then(function (fullUserData) {
+                service.addFullDataInStorage(fullUserData);
+                $scope.fullName = localStorage.fullName;
+                $scope.username = service.getUsername();
+                $scope.profileImage = localStorage.profileImage;
+                $scope.coverImage = localStorage.coverImage;
+            }, function (error) {
+                console.error.log(error);
+            });
+    } else {
+        console.log('fullName');
+        $scope.fullName = localStorage.fullName;
+        $scope.username = service.getUsername();
+        $scope.profileImage = localStorage.profileImage;
+        $scope.coverImage = localStorage.coverPicture;
+    }
 });

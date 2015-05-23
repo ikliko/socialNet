@@ -23,9 +23,13 @@ socialNet.factory('service', function($http, $q, baseUrl){
     }
     
     service.login = function (loginData) {
-        return makeRequest('POST', serviceUrl + '/login', null, loginData);
+        return makeRequest('POST', serviceUrl + '/Login', null, loginData);
     };
-    
+
+    service.logout = function () {
+        return makeRequest('POST', serviceUrl + '/Logout', this.getHeaders());
+    };
+
     service.register = function (registerData) {
         return makeRequest('POST', serviceUrl + '/Register', null, registerData);
     };
@@ -47,10 +51,7 @@ socialNet.factory('service', function($http, $q, baseUrl){
     };
 
     service.getFullUserData = function () {
-        return {
-            username: this.getUsername(),
-            fullName: localStorage.fullName
-        }
+        return makeRequest('GET', serviceUrl + '/' + this.getUsername(), this.getHeaders());
     };
 
     service.getHeaders = function() {
@@ -65,7 +66,28 @@ socialNet.factory('service', function($http, $q, baseUrl){
     
     service.setUserInLocalStorage = function (serverData) {
         localStorage.accessToken = serverData.access_token;
-        localStorage.username = serverData.username;
+        localStorage.username = serverData.userName;
+    };
+
+    service.addFullDataInStorage = function (serverData) {
+        localStorage.fullName = serverData.name;
+        localStorage.gender = serverData.gender;
+        localStorage.profileImage = serverData.profileImageData;
+        localStorage.coverImage = serverData.coverImageData;
+    };
+
+    service.removeUserInLocalStorage = function () {
+        delete localStorage['accessToken'];
+        delete localStorage['username'];
+        delete localStorage['fullName'];
+        delete localStorage['gender'];
+    };
+    
+    service.rememberUser = function (rememberData) {
+        localStorage.remembered = {
+            username: rememberData.username,
+            password: rememberData.password
+        };
     };
 
     return service;

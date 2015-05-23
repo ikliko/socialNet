@@ -36,6 +36,10 @@ var socialNet = angular.module('socialNet', ['ngResource', 'ngRoute' ])
                 templateUrl: './templates/pages/friends-requests.html',
                 controller: 'friendsRequestsController'
             })
+            .when('/logout', {
+                template: '<div>hi</div>',
+                controller: 'logoutController'
+            })
             .when('/PageNotFound', {
                 template: '<h1 class="text-center">Page Not Found/404</h1>'
             })
