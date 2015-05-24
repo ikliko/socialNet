@@ -9,7 +9,7 @@ socialNet.controller('editProfileController', function ($scope, $routeParams, $l
 
     var isFullData = localStorage.fullName;
     if(!isFullData) {
-        service.getFullUserData(service.getUsername())
+        service.getFullLoggedUserData(service.getUsername())
             .then(function (fullUserData) {
                 service.addFullDataInStorage(fullUserData);
                 $scope.fullName = localStorage.fullName;

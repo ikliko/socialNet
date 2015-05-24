@@ -1,6 +1,8 @@
 <div class="btn-group-sm">
-    <button ng-hide="post.liked" class="btn btn-link fa fa-thumbs-up" ng-click="likePost(post.id)"> Like</button>
-    <button ng-show="post.liked" class="btn btn-link fa fa-thumbs-down" ng-click="unlikePost(post.id)"> Unlike</button>
+    <div class="inline" ng-show="post.author.isFriend || post.wallOwner.isFriend">
+        <button ng-hide="post.liked" class="btn btn-link fa fa-thumbs-up" ng-click="likePost(post.id)"> Like</button>
+        <button ng-show="post.liked" class="btn btn-link fa fa-thumbs-down" ng-click="unlikePost(post.id)"> Unlike</button>
+    </div>
     {{post.likesCount}}
     <!--<div class="btn-group">-->
         <!--<a href="#" target="_self" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Comment</a>-->

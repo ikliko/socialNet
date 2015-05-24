@@ -8,7 +8,7 @@ socialNet.controller('userInfoController', function ($scope, $location, service)
 
     var isFullData = localStorage.fullName;
     if(!isFullData) {
-        service.getFullUserData()
+        service.getFullLoggedUserData()
             .then(function (fullUserData) {
                 service.addFullDataInStorage(fullUserData);
                 $scope.fullName = localStorage.fullName;

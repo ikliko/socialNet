@@ -1,16 +1,16 @@
 <div>
     <div>
-        <div class="panel panel-default cover-img">
+        <div class="panel panel-default cover-img-box">
             <div class="panel-body">
-                <img ng-hide="coverImage" class="img-thumbnail img" src="{{coverImage}}"
+                <img class="img-thumbnail img cover-img" src="{{profile.coverImage}}"
                      alt="cover photo keep calm and learn to code"/>
             </div>
         </div>
     </div>
-    <div class="profile-img" ng-hide="profileImage">
-        <img src="{{profileImage}}"
+    <div class="profile-img">
+        <img src="{{profile.profileImage}}"
              alt="profile picture"/>
     </div>
-    <a href="#" target="_self" class="btn btn-link customize-name-link">{{fullName}}</a>
+    <a href="#!/feed" class="btn btn-link customize-name-link">{{profile.fullName}}</a>
     <wall-user-menu></wall-user-menu>
 </div>

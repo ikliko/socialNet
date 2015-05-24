@@ -1,23 +1,25 @@
 <div ng-controller="userInfoController">
     <user-menu></user-menu>
     <div class="container fix-top-elm">
+        <user-profile></user-profile>
         <div class="fix-top-elm">
             <div class="row">
-                <div class="col-md-3">
-                    <div class="panel panel-default">
+                <div class="col-md-6">
+                    <div id="hide-parent" class="panel panel-default">
+                        <div class="panel-heading">Info
+                            <span id="hide-child" class="pull-right"><a href="#!/edit/profile" class="btn btn-default btn-sm fa fa-pencil"></a></span>
+                        </div>
                         <div class="panel-body">
-                            <a ng-hide="profileImage" href="#!/users/kliko" class="img-thumbnail">
-                                <img src="{{profileImage}}"
-                                     alt="profile picture"/>
-                            </a>
-                            <div class="btn-group-vertical">
-                                <a href="#!/users/kliko" class="btn btn-link">
-                                    {{fullName}}
-                                </a>
-                                <a href="#!/edit/profile" class="btn btn-link">
-                                    Edit profile
-                                </a>
-                            </div>
+                            <p>Full name: {{fullName}}</p>
+                            <p>Gender: {{gender}} <i class="{{genderType}}"></i></p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Friends <span class="badge" ng-show="friendsCount">{{friendsCount}}</span>
+                        </div>
+                        <div class="panel-body">
+                            <friends-box></friends-box>
                         </div>
                     </div>
                 </div>

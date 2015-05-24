@@ -38,6 +38,10 @@ socialNet.factory('service', function($http, $q, baseUrl){
         return makeRequest('GET', serviceUrl + '/Profile', this.getHeaders());
     };
 
+    service.getUserFullData = function (username) {
+        return makeRequest('GET', serviceUrl + '/' + username, this.getHeaders());
+    };
+
     service.editPassword = function (changePassData) {
         return makeRequest('PUT', serviceUrl + '/changepassword', this.getHeaders(), changePassData);
     };
@@ -46,7 +50,7 @@ socialNet.factory('service', function($http, $q, baseUrl){
         return makeRequest('PUT', baseUrl + '/me', this.getHeaders(), editUserData);
     };
 
-    service.getFullUserData = function () {
+    service.getFullLoggedUserData = function () {
         return makeRequest('GET', baseUrl + '/me', this.getHeaders());
     };
 

@@ -13,14 +13,11 @@
             </form>
             <ul id="customize-top-nav" class="nav nav-pills navbar-right nav-pills-centralize">
                 <li class="{{wallActive}}">
-                    <a href="#!/users/{{username}}">
+                    <a href="#!/feed">
                         <img ng-hide="profileImage" class="link-pic-sm" src="{{profileImage}}" alt="profile"/>
-                        <span>{{username}}</span>
+                        <span>{{fullName}}</span>
                         <span class="badge"></span>
                     </a>
-                </li>
-                <li class="{{feedActive}}">
-                    <a href="#!/feed">Home <span class="badge"></span></a>
                 </li>
                 <li class="{{friendsRequestActive}}">
                     <a href="#!/friends-requests">

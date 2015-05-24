@@ -179,8 +179,12 @@ input.ng-valid.ng-dirty.form-validation {
     border: 1px dashed #cccccc;
 }
 
+.cover-img-box {
+    height: 449px !important;
+}
+
 .cover-img {
-    height: 449px;
+    height: 416px !important;
 }
 
 .no-cover-img {
