@@ -2,6 +2,7 @@
  * Created by kliko on 16.05.15.
  */
 socialNet.controller('wallPageController', function ($scope, $routeParams, $location, service) {
+    $scope.wallActive = 'active';
     $scope.gender = getGender();
 
     $scope.genderType = getGenderType($scope.gender);

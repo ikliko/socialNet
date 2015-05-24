@@ -27,16 +27,18 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-2">
-                                    <img class="img" src="https://scontent-fra.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/10001372_1381684452110308_827010543_n.jpg?oh=55ac7cf70148bcf314ec60c246822e61&oe=55C495F0"
-                                         alt="profile picture"/>
+                                    <a href="#!/users/{{post.author.username}}">
+                                        <img class="img" src="{{post.author.profileImageData}}"
+                                             alt="profile picture"/>
+                                    </a>
                                 </div>
                                 <div class="col-lg-10">
                                     <div class="row">
-                                        <a href="profile" class="btn btn-link">{{post.author.name}}</a> posted:
+                                        <a href="#!/users/{{post.author.username}}" class="btn btn-link">{{post.author.name}}</a> posted:
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-2">
-                                            {{post.date | date:'MM/dd/yyyy "at" h:mma'}}
+                                        <div class="col-md-6">
+                                            {{post.date | date:'MM/dd/yyyy h:mma'}}
                                         </div>
                                     </div>
                                     <div class="row">

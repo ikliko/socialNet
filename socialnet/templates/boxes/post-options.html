@@ -1,5 +1,7 @@
 <div class="btn-group-sm">
-    <a href="#" class="btn btn-link fa fa-thumbs-up"></a> {{post.likesCount}}
+    <button ng-hide="post.liked" class="btn btn-link fa fa-thumbs-up" ng-click="likePost(post.id)"> Like</button>
+    <button ng-show="post.liked" class="btn btn-link fa fa-thumbs-down" ng-click="unlikePost(post.id)"> Unlike</button>
+    {{post.likesCount}}
     <!--<div class="btn-group">-->
         <!--<a href="#" target="_self" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Comment</a>-->
         <!-- -->
@@ -21,7 +23,7 @@
                 </div>
             </div>
             <div class="panel-footer">
-                Comment as {{name}} <img src="{{image}}" alt="imageProfile"/>
+                Comment as {{fullName}} <img ng-show="profileImage" src="{{profileImage}}" alt="imageProfile"/>
                 <button href="post" class="btn btn-primary btn-sm pull-right">Make Comment</button>
             </div>
         </form>

@@ -1,17 +1,25 @@
 <div>
     <div class="row">
         <div class="col-lg-4 img-friend-preview" ng-repeat="friend in rows.top">
-            <a href="#!/users/username">
+            <a href="#!/users/{{friend.username}}">
                 <img class="img" src="{{friend.profileImageData}}"
                      alt="profile picture"/>
+            </a>
+            <a class="btn btn-link full-friend-name center-block" href="#!/users/{{friend.username}}">
+                {{friend.name}}
             </a>
         </div>
     </div>
     <div class="clear">&nbsp;</div>
     <div class="row">
         <div class="col-lg-4" ng-repeat="friend in rows.bottom">
-            <img class="img" src="{{friend.profileImageData}}"
-                 alt="profile picture"/>
+            <a href="#!/users/{{friend.username}}">
+                <img class="img" src="{{friend.profileImageData}}"
+                     alt="profile picture"/>
+            </a>
+            <a class="btn btn-link" href="#!/users/{{friend.username}}">
+                {{friend.name}}
+            </a>
         </div>
     </div>
 </div>

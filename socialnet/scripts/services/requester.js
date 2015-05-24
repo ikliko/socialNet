@@ -38,28 +38,44 @@ socialNet.factory('service', function($http, $q, baseUrl){
         return makeRequest('GET', serviceUrl + '/Profile', this.getHeaders());
     };
 
+    service.editPassword = function (changePassData) {
+        return makeRequest('PUT', serviceUrl + '/changepassword', this.getHeaders(), changePassData);
+    };
+
     service.editProfile = function (editUserData) {
         return makeRequest('PUT', baseUrl + '/me', this.getHeaders(), editUserData);
     };
 
-    service.editPassword = function (changePassData) {
-        return makeRequest('PUT', serviceUrl + '/ChangePassword', this.getHeaders(), changePassData);
+    service.getFullUserData = function () {
+        return makeRequest('GET', baseUrl + '/me', this.getHeaders());
     };
-    
-    service.getReuqests = function () {
-        return makeRequest('GET', baseUrl + '/me/requests', this.getHeaders());
+
+    service.getFeed = function (feedData) {
+        return makeRequest('GET', baseUrl + '/me/feed?StartPostId=' + feedData.startPostId + '&PageSize=' + feedData.pageSize, this.getHeaders());
     };
 
     service.getAllFriends = function () {
         return makeRequest('GET', baseUrl + '/me/friends', this.getHeaders());
     };
 
-    service.getUsername = function () {
-        return localStorage['username'];
+    service.getReuqests = function () {
+        return makeRequest('GET', baseUrl + '/me/requests', this.getHeaders());
     };
 
-    service.getFullUserData = function () {
-        return makeRequest('GET', baseUrl + '/me', this.getHeaders());
+    service.likePost = function (id) {
+        return makeRequest('POST', baseUrl + '/posts/' + id + '/likes', this.getHeaders());
+    };
+
+    service.unlikePost = function (id) {
+        return makeRequest('DELETE', baseUrl + '/posts/' + id + '/likes', this.getHeaders());
+    };
+
+    service.getPost = function (id) {
+        return makeRequest('GET', baseUrl + '/posts/' + id, this.getHeaders());
+    };
+
+    service.getUsername = function () {
+        return localStorage['username'];
     };
 
     service.getHeaders = function() {
@@ -92,6 +108,8 @@ socialNet.factory('service', function($http, $q, baseUrl){
         delete localStorage['genderType'];
         delete localStorage['email'];
         delete localStorage['gender'];
+        delete localStorage['coverImage'];
+        delete localStorage['profileImage'];
     };
     
     service.rememberUser = function (rememberData) {
