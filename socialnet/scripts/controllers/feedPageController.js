@@ -4,6 +4,7 @@
 socialNet.controller('feedPageController', function ($scope, $location, service) {
     $scope.feedActive = 'active';
     $scope.gender = getGender();
+    $scope.isFeed = true;
 
     $scope.genderType = getGenderType($scope.gender);
 

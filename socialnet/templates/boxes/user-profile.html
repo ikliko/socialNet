@@ -2,15 +2,20 @@
     <div>
         <div class="panel panel-default cover-img-box">
             <div class="panel-body">
-                <img class="img-thumbnail img cover-img" src="{{profile.coverImage}}"
+                <img ng-show="isFeed" class="img-thumbnail img cover-img" src="{{coverImage}}"
+                     alt="cover photo keep calm and learn to code"/>
+                <img ng-hide="isFeed" class="img-thumbnail img cover-img" src="{{profile.coverImage}}"
                      alt="cover photo keep calm and learn to code"/>
             </div>
         </div>
     </div>
     <div class="profile-img">
-        <img src="{{profile.profileImage}}"
+        <img ng-show="isFeed" src="{{profileImage}}"
+             alt="profile picture"/>
+        <img ng-hide="isFeed" src="{{profile.profileImage}}"
              alt="profile picture"/>
     </div>
-    <a href="#!/feed" class="btn btn-link customize-name-link">{{profile.fullName}}</a>
+    <a href="#!/feed" ng-show="isFeed" class="btn btn-link customize-name-link">{{fullName}}</a>
+    <a href="#!/feed" ng-hide="isFeed" class="btn btn-link customize-name-link">{{profile.fullName}}</a>
     <wall-user-menu></wall-user-menu>
 </div>

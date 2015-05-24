@@ -66,6 +66,10 @@ socialNet.factory('service', function($http, $q, baseUrl){
         return makeRequest('GET', baseUrl + '/me/requests', this.getHeaders());
     };
 
+    service.submitRequest = function (id, status) {
+        return makeRequest('GET', baseUrl + '/me/requests/' + id + '?status=' + status, this.getHeaders());
+    };
+
     service.likePost = function (id) {
         return makeRequest('POST', baseUrl + '/posts/' + id + '/likes', this.getHeaders());
     };

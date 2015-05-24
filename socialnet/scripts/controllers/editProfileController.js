@@ -3,6 +3,7 @@
  */
 socialNet.controller('editProfileController', function ($scope, $routeParams, $location, service, notifyService) {
     $scope.editProfileActive = 'active';
+    $scope.isFeed = true;
     if(!service.isLoggedIn()) {
         $location.path('/AccesDenied')
     }

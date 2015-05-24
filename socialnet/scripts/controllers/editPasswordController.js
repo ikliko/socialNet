@@ -3,6 +3,7 @@
  */
 socialNet.controller('editPasswordController', function ($scope, service) {
     $scope.isEditPasswordActive = 'active';
+    $scope.isFeed = true;
 
     $scope.changePassword = function (passwordData) {
         if(passwordData.newPassword === passwordData.confirmPassword) {

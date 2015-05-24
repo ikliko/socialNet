@@ -3,6 +3,7 @@
  */
 socialNet.controller('wallPageController', function ($scope, $routeParams, $location, service) {
     var currentUsername = $routeParams.username;
+    $scope.isFeed = false;
     if(service.getUsername() == currentUsername) {
         $location.path('/feed');
     }
