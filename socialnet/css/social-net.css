@@ -30,6 +30,7 @@ body {
 
 .img {
     width: 100%;
+    height: 100%;
 }
 
 #customize-top-nav {
@@ -43,6 +44,7 @@ body {
 .profile-img {
     position: absolute;
     width: 200px;
+    height: 220px;
     margin: -220px 0 0 17px;
     padding: 10px;
     background: #fff;
@@ -51,6 +53,7 @@ body {
 
 .profile-img>img {
     width: 100%;
+    height: 100%;
 }
 
 .wall-user-menu {
@@ -151,6 +154,14 @@ input.ng-valid.ng-dirty.form-validation {
     display: block;
 }
 
+#hide-child {
+    display: none;
+}
+
+#hide-parent:hover>div>#hide-child{
+    display: block !important;
+}
+
 .inline {
     display: inline-block;
 }
@@ -166,4 +177,20 @@ input.ng-valid.ng-dirty.form-validation {
 
 .dashed {
     border: 1px dashed #cccccc;
+}
+
+.cover-img {
+    height: 449px;
+}
+
+.no-cover-img {
+    height: 50px;
+}
+
+.img-friend-preview {
+    height: 171.111px;
+}
+
+.post-btn {
+    margin-top: -3px;
 }

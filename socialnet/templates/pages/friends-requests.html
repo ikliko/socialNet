@@ -1,14 +1,16 @@
-<user-menu></user-menu>
-<div class="container fix-top-elm">
-    <user-profile></user-profile>
+<div ng-controller="userInfoController">
+    <user-menu></user-menu>
+    <div class="container fix-top-elm">
+        <user-profile></user-profile>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3>Pending Friends Requests</h3>
-        </div>
-        <div class="panel-body">
-            <div class="row bottom-divider" ng-repeat="row in rows">
-                <request-user></request-user>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>Pending Friends Requests</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row bottom-divider" ng-repeat="row in rows">
+                    <request-user></request-user>
+                </div>
             </div>
         </div>
     </div>

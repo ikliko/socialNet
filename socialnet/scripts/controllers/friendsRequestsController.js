@@ -32,6 +32,30 @@ socialNet.controller('friendsRequestsController', function ($scope, $routeParams
         {
             image: 'https://scontent-fra.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/10001372_1381684452110308_827010543_n.jpg?oh=55ac7cf70148bcf314ec60c246822e61&oe=55C495F0',
             fullName: 'Kliko Atanasov 5'
+        },
+        {
+            image: 'https://scontent-fra.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/10001372_1381684452110308_827010543_n.jpg?oh=55ac7cf70148bcf314ec60c246822e61&oe=55C495F0',
+            fullName: 'Kliko Atanasov 3'
+        },
+        {
+            image: 'https://scontent-fra.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/10001372_1381684452110308_827010543_n.jpg?oh=55ac7cf70148bcf314ec60c246822e61&oe=55C495F0',
+            fullName: 'Kliko Atanasov 4'
+        },
+        {
+            image: 'https://scontent-fra.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/10001372_1381684452110308_827010543_n.jpg?oh=55ac7cf70148bcf314ec60c246822e61&oe=55C495F0',
+            fullName: 'Kliko Atanasov 5'
+        },
+        {
+            image: 'https://scontent-fra.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/10001372_1381684452110308_827010543_n.jpg?oh=55ac7cf70148bcf314ec60c246822e61&oe=55C495F0',
+            fullName: 'Kliko Atanasov 3'
+        },
+        {
+            image: 'https://scontent-fra.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/10001372_1381684452110308_827010543_n.jpg?oh=55ac7cf70148bcf314ec60c246822e61&oe=55C495F0',
+            fullName: 'Kliko Atanasov 4'
+        },
+        {
+            image: 'https://scontent-fra.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/10001372_1381684452110308_827010543_n.jpg?oh=55ac7cf70148bcf314ec60c246822e61&oe=55C495F0',
+            fullName: 'Kliko Atanasov 5'
         }
     ];
     $scope.rows = [];
@@ -44,9 +68,4 @@ socialNet.controller('friendsRequestsController', function ($scope, $routeParams
         };
         $scope.rows.push(row);
     }
-
-    $scope.rows.forEach(function (row) {
-        console.log(row.leftCol);
-        console.log(row.rightCol);
-    });
 });

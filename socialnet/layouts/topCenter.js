@@ -4,16 +4,16 @@ $.noty.layouts.topCenter = {
 
     },
     container: {
-        object  : '<ul id="noty_topCenter_layout_container" />',
-        selector: 'ul#noty_topCenter_layout_container',
+        object  : '<div id="noty_topCenter_layout_container" style="z-index: 99999;" class="alert alert-dismissible alert-success"><button type="button" class="close" data-dismiss="alert">×</button></div>',
+        selector: 'div#noty_topCenter_layout_container',
         style   : function() {
             $(this).css({
                 top          : 20,
                 left         : 0,
                 position     : 'fixed',
-                width        : '310px',
+                width        : '570px',
                 height       : 'auto',
-                margin       : 0,
+                margin       : '-4px',
                 padding      : 0,
                 listStyleType: 'none',
                 zIndex       : 10000000

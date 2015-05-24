@@ -2,26 +2,75 @@
  * Created by kliko on 16.05.15.
  */
 socialNet.controller('wallPageController', function ($scope, $routeParams, $location, service) {
-    $scope.wallActive = 'active';
-    if(!service.isLoggedIn()) {
-        $location.path('/AccesDenied')
+    $scope.gender = getGender();
+
+    $scope.genderType = getGenderType($scope.gender);
+
+    function getGender () {
+        var gender = '';
+        switch(localStorage.genderType) {
+            case '1': gender = 'male';
+                break;
+            case '2': gender = 'female';
+                break;
+            default: gender = 'other';
+                break;
+        }
+
+        return gender;
     }
+
+    function getGenderType (gender) {
+        var genderType = 'fa fa-';
+        switch(gender) {
+            case 'male': genderType += 'mars';
+                break;
+            case 'female': genderType += 'venus';
+                break;
+            default: genderType += 'circle-thin';
+                break;
+        }
+        return genderType;
+    }
+
+    service.getAllFriends()
+        .then(function (data) {
+            $scope.friendsCount = data.length;
+
+            var allFriends = data;
+
+            $scope.rows = {
+                top: [],
+                bottom: []
+            };
+
+            var i = 0,
+                lnt = allFriends.length;
+            for(; i < lnt; i++) {
+                if(i < 3) {
+                    $scope.rows.top.push(allFriends[i]);
+                } else {
+                    $scope.rows.bottom.push(allFriends[i]);
+                }
+
+                if(i == 5) {
+                    break;
+                }
+            }
+
+        }, function (error) {
+            console.log(error);
+        });
 
     $scope.submitPost = function (postContent) {
         var post = {
             author: {
-                name: 'goshito'
+                name: 'name'
             },
             postContent: postContent
         };
-
         $scope.posts.push(post);
     };
 
     $scope.posts = [];
-    //$scope.username = $routeParams.username || 'kliko';
-    //$scope.fullName = 'Kliko Atanasov';
-    //$scope.work = 'One Creative as Backend';
-    //$scope.study = 'Software University';
-    //$scope.image = 'https://scontent-fra.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/10001372_1381684452110308_827010543_n.jpg?oh=55ac7cf70148bcf314ec60c246822e61&oe=55C495F0';
 });

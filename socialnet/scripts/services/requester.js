@@ -39,11 +39,19 @@ socialNet.factory('service', function($http, $q, baseUrl){
     };
 
     service.editProfile = function (editUserData) {
-        return makeRequest('PUT', serviceUrl + '/Profile', this.getHeaders(), editUserData);
+        return makeRequest('PUT', baseUrl + '/me', this.getHeaders(), editUserData);
     };
 
     service.editPassword = function (changePassData) {
         return makeRequest('PUT', serviceUrl + '/ChangePassword', this.getHeaders(), changePassData);
+    };
+    
+    service.getReuqests = function () {
+        return makeRequest('GET', baseUrl + '/me/requests', this.getHeaders());
+    };
+
+    service.getAllFriends = function () {
+        return makeRequest('GET', baseUrl + '/me/friends', this.getHeaders());
     };
 
     service.getUsername = function () {
@@ -51,7 +59,7 @@ socialNet.factory('service', function($http, $q, baseUrl){
     };
 
     service.getFullUserData = function () {
-        return makeRequest('GET', serviceUrl + '/' + this.getUsername(), this.getHeaders());
+        return makeRequest('GET', baseUrl + '/me', this.getHeaders());
     };
 
     service.getHeaders = function() {
@@ -71,15 +79,18 @@ socialNet.factory('service', function($http, $q, baseUrl){
 
     service.addFullDataInStorage = function (serverData) {
         localStorage.fullName = serverData.name;
-        localStorage.gender = serverData.gender;
+        localStorage.genderType = serverData.gender;
         localStorage.profileImage = serverData.profileImageData;
         localStorage.coverImage = serverData.coverImageData;
+        localStorage.email = serverData.email;
     };
 
     service.removeUserInLocalStorage = function () {
         delete localStorage['accessToken'];
         delete localStorage['username'];
         delete localStorage['fullName'];
+        delete localStorage['genderType'];
+        delete localStorage['email'];
         delete localStorage['gender'];
     };
     

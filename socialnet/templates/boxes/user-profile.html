@@ -1,14 +1,14 @@
 <div>
     <div>
-        <div class="panel panel-default">
+        <div class="panel panel-default cover-img">
             <div class="panel-body">
-                <img class="img-thumbnail img" src="https://scontent-fra.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/1506846_1382700598675360_349073648_n.jpg?oh=6f8b667e9d19d2a5070c494fc4b67ea5&oe=5606692E"
+                <img ng-hide="coverImage" class="img-thumbnail img" src="{{coverImage}}"
                      alt="cover photo keep calm and learn to code"/>
             </div>
         </div>
     </div>
-    <div class="profile-img">
-        <img ng-hide="profilePicture" src="{{profilePicture}}"
+    <div class="profile-img" ng-hide="profileImage">
+        <img src="{{profileImage}}"
              alt="profile picture"/>
     </div>
     <a href="#" target="_self" class="btn btn-link customize-name-link">{{fullName}}</a>

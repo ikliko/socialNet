@@ -13,7 +13,7 @@
             </form>
             <ul id="customize-top-nav" class="nav nav-pills navbar-right nav-pills-centralize">
                 <li class="{{wallActive}}">
-                    <a href="#!/users/kliko">
+                    <a href="#!/users/{{username}}">
                         <img ng-hide="profileImage" class="link-pic-sm" src="{{profileImage}}" alt="profile"/>
                         <span>{{username}}</span>
                         <span class="badge"></span>
@@ -26,7 +26,7 @@
                     <a href="#!/friends-requests">
                         <!--requests-->
                         <i class="fa fa-users font-lg"></i>
-                        <span class="badge">69</span>
+                        <span class="badge" ng-show="requestsCount">{{requestsCount}}</span>
                     </a>
                 </li>
                 <li class="{{editProfileActive}}">
